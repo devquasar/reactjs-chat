@@ -6,7 +6,9 @@ function App() {
   return (
     <div className="wrapper">
       <h1>Hello, World!</h1>
-      <Button>This is Button!</Button>
+      <Button type="primary" size="large">
+        This is Button!
+      </Button>
     </div>
   );
 }
