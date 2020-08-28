@@ -1,0 +1,16 @@
+.auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  &__top {
+    h2 {
+      font-size: 28px;
+      line-height: 33px;
+    }
+  }
+  .block {
+    width: 430px;
+  }
+}
