@@ -7,7 +7,7 @@ const Auth = () => (
   <section className="auth">
     <div className="auth__content">
       <div className="auth__top">
-        <h2>Войти в аккаунт</h2>
+        <h2>Войти в аккаунтт</h2>
         <p>Пожалуйста, войдите в свой аккаунт </p>
       </div>
       <Block>
