@@ -2,19 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Form, Input } from "antd";
 import { LockOutlined, MailOutlined } from "@ant-design/icons";
+
 import { Button, Block } from "components";
 
-const validate = (key, touched, errors) => {
-  if (touched[key]) {
-    if (errors[key]) {
-      return "error";
-    } else {
-      return "success";
-    }
-  } else {
-    return "";
-  }
-};
+import { validateField } from "utils/helpers";
 
 const LoginForm = (props) => {
   const {
@@ -40,7 +31,7 @@ const LoginForm = (props) => {
         >
           <Form.Item
             hasFeedback
-            validateStatus={validate("email", touched, errors)}
+            validateStatus={validateField("email", touched, errors)}
             help={!touched.email ? false : errors.email}
           >
             <Input
@@ -56,7 +47,7 @@ const LoginForm = (props) => {
 
           <Form.Item
             hasFeedback
-            validateStatus={validate("password", touched, errors)}
+            validateStatus={validateField("password", touched, errors)}
             help={!touched.password ? false : errors.password}
           >
             <Input
