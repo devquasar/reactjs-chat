@@ -9,6 +9,7 @@ import {
 } from "@ant-design/icons";
 
 import { Button, Block } from "components";
+import { validateField } from "utils/helpers";
 
 const success = false;
 
@@ -37,9 +38,7 @@ const RegisterForm = (props) => {
           >
             <Form.Item
               hasFeedback
-              validateStatus={
-                !touched.email ? "" : errors.email ? "error" : "success"
-              }
+              validateStatus={validateField("email", touched, errors)}
               help={!touched.email ? false : errors.email}
             >
               <Input
@@ -61,9 +60,7 @@ const RegisterForm = (props) => {
             </Form.Item>
             <Form.Item
               hasFeedback
-              validateStatus={
-                !touched.password ? "" : errors.password ? "error" : "success"
-              }
+              validateStatus={validateField("password", touched, errors)}
               help={!touched.password ? false : errors.password}
             >
               <Input
@@ -77,10 +74,12 @@ const RegisterForm = (props) => {
                 onBlur={handleBlur}
               />
             </Form.Item>
-            <Form.Item name="repeat-password">
+            <Form.Item
+              validateStatus={validateField("password", touched, errors)}
+            >
               <Input
                 prefix={<LockOutlined className="site-form-item-icon" />}
-                type="password"
+                type="password2"
                 placeholder="Повторите пароль"
                 size="large"
               />
